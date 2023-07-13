@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DOM Projetos CSS</title>
+		<style>
+			body {
+				font-family:Arial, Helvetica, sans-serif
+
+			}
+
+			.botãodeinscrição-button {
+				border: none;
+				background-color: black;
+				color: white;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				padding-left: 15px;
+				padding-right: 15px;
+				font-weight: bold;
+				border-radius: 50px;
+				cursor: pointer;
+				margin-bottom: 45px;
+			}
+
+			.se-inscreveu {
+				background-color: rgb(240, 240, 240);
+				color: black;
+			}
+
+			.custo-input {
+				font-size: 15px;
+				/*
+				padding-top: 10px;
+				padding-bottom: 10px;
+				padding-left: 10px;   
+				padding-right: 10px;           padding: 10px faz a mesma coisa.
+				*/
+				padding: 10px;
+				
+			}
+
+			.calcular-button{
+				background-color: green;
+				color: white;
+				border: none;
+				font-size: 15px;
+				padding: 12px 50px;
+				cursor: pointer;
+			}
+		</style>
+</head>
+<body>
+   <p>Botão de Inscreve-se no Youtube</p>
+   <button onclick="
+   seinscrever();
+   " class="js-seinscrever-button botãodeinscrição-button">
+   Inscreve-se</button>
+
+
+	<p>Calculadora de envio da Amazon</p>
+	<input placeholder="Custo do pedido" 
+	class="js-custo-input  custo-input" onkeydown="
+	lidarTeclaCusto(event);">
+	<button onclick="
+	CalculoTotal();
+	" class="calcular-button">Calcular</button>
+	<p class="js-custo-total"></p>
+
+	<script>
+	function lidarTeclaCusto(event) {
+		if (event.key === 'Enter') {
+			CalculoTotal();
+		}
+	}
+	function CalculoTotal() {
+		const inputElement = document.querySelector('.js-custo-input');
+		let custo = Number(inputElement.value);
+		if (custo < 40) {
+			custo = custo + 10;
+		}
+		document.querySelector('.js-custo-total')
+		.innerHTML = `$${custo}`;
+	}
+
+	function seinscrever() {
+		const buttonElement = document.querySelector('.js-seinscrever-button');
+
+		if (buttonElement.innerText === 'Inscreve-se') {
+			buttonElement.innerHTML = 'Inscrito';
+			buttonElement.classList.add('se-inscreveu');
+		} else {
+			buttonElement.innerHTML = 'Inscreve-se';
+			buttonElement.classList.remove('se-inscreveu');
+		}
+	}
+	</script>
+	</body>
+</html>
