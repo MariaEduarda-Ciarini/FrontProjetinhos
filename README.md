@@ -1,2 +1,2 @@
 # FrontProjetinhos
- JavaScript, HTML, CSS
+ # Aprendendo JavaScript, HTML, CSS
