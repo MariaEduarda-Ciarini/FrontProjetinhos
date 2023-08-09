@@ -8,21 +8,25 @@ body {
 }
 
 a {
-	color:aliceblue;
+	color: aliceblue;
 }
 
-a:visited{
+a:visited {
 	color: lightgray;
 }
 
-a:hover, a:active {
+a:hover,
+a:active {
 	color: #eee;
 }
 
-table, tr, th, td, caption {
+table,
+tr,
+th,
+td,
+caption {
 	border: 1px solid #eee;
-	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	border-collapse: collapse;
 	padding: 0.5rem;
 }
-
