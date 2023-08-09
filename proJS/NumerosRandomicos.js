@@ -15,7 +15,7 @@ while (true) {
         console.log("Seu palpite é muito baixo.");
         continue;
     }
-    
+
     console.log("Você adivinhou!");
     break;
 }
